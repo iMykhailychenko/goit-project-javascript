@@ -1,8 +1,8 @@
 each item in popularFilm
-  li.film-list__item(data-id=`${item.id}`)
-    a.film-link(href='#')
-      img.film-img(src=`https://image.tmdb.org/t/p/w400/${item.backdrop_path}`, alt='')
-      span.film-name=item.title+item.release_date
-      p.film-vote=item.vote_average
+  if item.backdrop_path
+    li.film-list__item
+      a.film-link(href=`?id=${item.id}#inner-page`)
+        img.film-img(src=`https://image.tmdb.org/t/p/w400/${item.backdrop_path}`, alt='')
+        span.film-name=item.title+item.release_date
 
 

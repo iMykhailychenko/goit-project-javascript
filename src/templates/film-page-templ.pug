@@ -1,0 +1,37 @@
+each item in film
+    .details__img-wrp
+        img(src=`https://image.tmdb.org/t/p/w400/${item.poster_path}` alt="").details__img
+    .details__content-wrp
+        h2.details__title.title.copy--js 
+            span.popup__hidde=`${item.title} скачать без смс и регистрации`
+            span.popup__name=item.title
+            .popup
+                span.popup__title Кликни чтобы скопировать
+                span.popup__text Не нужно нажимать 
+                    kbd Ctrl
+                    kbd C
+                br
+                span.popup__text Мы ценим ваше время :)
+        table.details__table.table
+            tr.table__row
+                td.table__cell.table__cell--left.text vote / votes
+                td.table__cell.text=`${item.vote_average} / ${item.vote_count}`
+            tr.table__row
+                td.table__cell.table__cell--left.text popularity
+                td.table__cell.text=item.popularity
+            tr.table__row
+                td.table__cell.table__cell--left.text original title
+                td.table__cell.text=item.original_title
+            tr.table__row
+                td.table__cell.table__cell--left.text genre
+                td.table__cell.text.genres-js
+        section.details__about
+            h2.details__title.title About
+            p.details__text.text=item.overview
+            .details__btn-wrp
+                button.details__btn.btn.watched-js(data-key="watched")
+                    i.fas.fa-video.details__icon 
+                    |  Add to watched
+                button.details__btn.btn.queue-js(data-key="queue")
+                    i.far.fa-calendar-plus.details__icon 
+                    |  Add to queue

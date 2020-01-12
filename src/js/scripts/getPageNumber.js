@@ -1,42 +1,31 @@
-import { renderFilmPerPages } from './getCorrectData';
-
 const prevBtn = document.querySelector('.btn-prev');
 const nextBtn = document.querySelector('.btn-next');
 const pageNumber = document.querySelector('.page-number');
 
-let currentPageNumber = 1;
-
 const changePageNumber = {
-  increment: function() {
+  page: 1,
+
+  increment(calback) {
     prevBtn.disabled = false;
     prevBtn.classList.remove('disabled');
-    currentPageNumber += 1;
-    pageNumber.textContent = currentPageNumber;
-    renderFilmPerPages(currentPageNumber);
+    this.page += 1;
+    pageNumber.textContent = this.page;
+    calback(this.page);
   },
 
-  decrement: function() {
+  decrement(calback) {
     if (pageNumber.textContent !== '2') {
-      currentPageNumber -= 1;
-      pageNumber.textContent = currentPageNumber;
-      renderFilmPerPages(currentPageNumber);
+      this.page -= 1;
+      pageNumber.textContent = this.page;
+      calback(this.page);
     } else {
-      currentPageNumber -= 1;
-      pageNumber.textContent = currentPageNumber;
+      this.page -= 1;
+      pageNumber.textContent = this.page;
       prevBtn.disabled = true;
       prevBtn.classList.add('disabled');
-      renderFilmPerPages(currentPageNumber);
+      calback(this.page);
     }
   },
 };
 
-nextBtn.addEventListener(
-  'click',
-  changePageNumber.increment.bind(changePageNumber),
-);
-
-prevBtn.addEventListener(
-  'click',
-  changePageNumber.decrement.bind(changePageNumber),
-);
-
+export { changePageNumber };

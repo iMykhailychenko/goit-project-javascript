@@ -5,7 +5,8 @@ import '../img/logo.png';
 require('@fortawesome/fontawesome-free/js/all');
 
 // JavaScript
-import './scripts/getCorrectData';
 import './scripts/getPageNumber';
-import './scripts/copyName';
 import './scripts/searchFilm';
+import './scripts/renderFilmPage';
+// import './scripts/scroll-top';
+import './scripts/routing';

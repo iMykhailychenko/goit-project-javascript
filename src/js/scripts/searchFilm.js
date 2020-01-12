@@ -1,4 +1,5 @@
 import fetch from './fetchFilms';
+import { render } from './renderMainPage';
 const debounce = require('lodash.debounce');
 
 class Search {
@@ -66,7 +67,7 @@ class Search {
     const markup = firstFilms
       .map(item => {
         return `<li class="results__item">
-                <p class="results__text">${item.title}</p>
+                <a href=?id=${item.id}#inner-page class="results__text">${item.title}</p>
               </li>`;
       })
       .join('');
@@ -75,8 +76,22 @@ class Search {
   }
 
   renderFilms(data) {
-    console.log('найдено ' + data.total_results + ' фильмов');
-    console.log(data.results);
+    const searchBlock = document.querySelector('.results');
+    searchBlock.hidden = true;
+    const filmsList = document.querySelector('.film-list');
+    filmsList.innerHTML = '';
+
+    const correctData = data.results.map(item => {
+      return {
+        id: item.id,
+        backdrop_path: item.backdrop_path,
+        title: item.title,
+        release_date: `(${item.release_date.slice(0, 4)})`,
+        vote_average: item.vote_average,
+      };
+    });
+    const obj = { popularFilm: correctData };
+    render(obj);
   }
 }
 

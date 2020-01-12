@@ -16,8 +16,12 @@
 .film-list__item {
   padding-top: 12px;
   position: relative;
+  transition: transform 300ms linear;
 
-  
+  &:hover {
+    transform: scale(1.05);
+  }
+
   @media (min-width: 760px) {
     padding-top: 16px;
   }
@@ -37,6 +41,12 @@
   font-size: 1rem;
 }
 
+.film-link {
+  display: block;
+  position: relative;
+  z-index: 3;
+}
+
 .film-vote {
   border-radius: 6px;
   background-color: $white;
@@ -48,10 +58,8 @@
   right: 10px;
 }
 
-
 .film-img {
   border-radius: 5px;
-
 
   @media (min-width: 760px) {
     width: 348px;
@@ -64,7 +72,6 @@
   }
 }
 
-
 .film-list__item::after {
   content: '';
   display: block;
@@ -73,7 +80,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to top, #000000,rgba(255, 255, 255, 0));
+  background: linear-gradient(to top, #000000, rgba(255, 255, 255, 0));
   z-index: 1;
   border-radius: 5px;
 
@@ -89,4 +96,3 @@
 .inactive {
   display: none;
 }
-

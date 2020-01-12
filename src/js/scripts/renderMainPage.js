@@ -1,9 +1,9 @@
 const templateOfMainPage = require('../../templates/film-card.pug');
 
 function render(content) {
-    const items = templateOfMainPage(content);
-    const filmsList = document.querySelector('.film-list');
-    filmsList.insertAdjacentHTML('beforeend', items);
+  const filmsList = document.querySelector('.film-list');
+  const items = templateOfMainPage(content);
+  filmsList.insertAdjacentHTML('beforeend', items);
 }
 
-export {render}
+export { render };

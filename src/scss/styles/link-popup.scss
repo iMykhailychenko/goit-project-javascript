@@ -1,0 +1,60 @@
+.popup {
+  position: absolute;
+  bottom: 40px;
+  left: -10px;
+  display: none;
+  width: 300px;
+  padding: 18px;
+  color: $black;
+  background: $white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border: 1px solid #656565;
+  border-radius: 10px;
+  line-height: 1.2;
+
+  &__title {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__text {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: $black;
+  }
+
+  &__map {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+
+  &__hidde {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    font-size: 0;
+    opacity: 0;
+  }
+}
+
+.copied {
+  padding: 6px;
+  color: $white;
+  border-radius: 6px;
+  background: $green;
+}
+
+kbd {
+  margin: 0 2px;
+  padding: 2px 4px;
+  background: #eee;
+  border-radius: 6px;
+}
+
+.popup--map {
+  width: 500px;
+}

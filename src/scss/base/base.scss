@@ -59,3 +59,23 @@ main {
     width: 964px;
   }
 }
+
+.container-film {
+  width: 274px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 716px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 900px;
+  }
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

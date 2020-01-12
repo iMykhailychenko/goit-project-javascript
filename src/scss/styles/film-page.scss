@@ -1,0 +1,116 @@
+.details {
+  padding-top: 20px;
+
+  &__img-wrp {
+    height: 405px;
+    width: 100%;
+    background: $green;
+  }
+
+  &__about {
+    padding: 10px 0 20px;
+  }
+
+  &__text {
+    line-height: 1.5;
+  }
+
+  &__btn-wrp {
+    padding-top: 15px;
+  }
+
+  &__btn {
+    margin-right: 14px;
+    padding: 4px;
+    transition: 0.3s;
+
+    &:hover {
+      color: $white;
+      background: $green;
+      border-radius: 6px;
+    }
+
+    &:hover .details__icon {
+      color: $white;
+    }
+  }
+
+  &__icon {
+    color: $green;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &__row {
+    &:nth-of-type(odd) {
+      background: $green;
+    }
+  }
+
+  &__cell {
+    padding: 6px 11px;
+
+    &--left {
+      width: 114px;
+    }
+  }
+}
+
+@media (min-width: 765px) {
+  .details {
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+
+    &__img-wrp {
+      height: 525px;
+      flex-basis: 50%;
+    }
+
+    &__content-wrp {
+      flex-basis: 47%;
+    }
+
+    &__title {
+      padding-top: 8px;
+    }
+
+    &__about {
+      padding-top: 35px;
+    }
+
+    &__btn-wrp {
+      padding-top: 22px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .details {
+    &__img-wrp {
+      height: 630px;
+      flex-basis: 48%;
+    }
+
+    &__content-wrp {
+      flex-basis: 48%;
+    }
+
+    &__btn-wrp {
+      padding-top: 38px;
+    }
+  }
+
+  .copy--js {
+    position: relative;
+    cursor: pointer;
+
+    &:hover .popup {
+      display: inline-block;
+      z-index: 2;
+    }
+  }
+}

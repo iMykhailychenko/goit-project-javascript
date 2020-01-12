@@ -2,7 +2,10 @@
 import '../scss/main.scss';
 import '../img/favicon.png';
 import '../img/logo.png';
+require('@fortawesome/fontawesome-free/js/all');
 
 // JavaScript
-import renderMainPage from './scripts/getCorrectData';
-import getPageNumber from './scripts/getPageNumber';
+import './scripts/getCorrectData';
+import './scripts/getPageNumber';
+import './scripts/copyName';
+import './scripts/searchFilm';

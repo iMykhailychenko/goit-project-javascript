@@ -1,13 +1,9 @@
-import fetch from './fetchPopularFilms';
+import fetch from './fetchFilms';
 import { render } from './renderMainPage';
-import { changePageNumber } from './getPageNumber';
-const filmsList = document.querySelector('.film-list');
-const nextBtn = document.querySelector('.btn-next');
-const pageNumber = document.querySelector('.page-number');
 
 const way = 'discover';
 
-fetch.getFilmsList(way).then(data => {
+fetch.getFilmsList(way, fetchParams).then(data => {
   const correctData = data.results.map(item => {
     return {
       id: item.id,
@@ -21,30 +17,28 @@ fetch.getFilmsList(way).then(data => {
   render(obj);
 });
 
-function fetchParams(number) {
-  const filmsList = document.querySelector('.film-list');
-  filmsList.innerHTML = '';
-  fetch.getFilmsList(way, `&page=${number}`).then(data => {
-    console.log(data)
-    // if (data.results.length < 20) {
-    //   nextBtn.disabled = true;
-    //   nextBtn.classList.add('disabled');
-    // }
-    if (pageNumber.textContent === (data.total_pages - 1)) {
-      nextBtn.disabled = true;
-      nextBtn.classList.add('disabled');
-    }
-    const correctData = data.results.map(item => {
-      return {
-        id: item.id,
-        backdrop_path: item.backdrop_path,
-        title: item.title,
-        release_date: ` (${item.release_date.slice(0, 4)})`,
-      };
+function fetchParams() {
+  return `&page=1`;
+}
+
+function renderFilmPerPages(page) {
+  function pagination() {
+    return `&page=${page}`;
+  }
+
+  fetch.getFilmsList(way, pagination).then(data => {
+    const filmList = document.querySelectorAll('.film-list__item');
+    filmList.forEach((element, index) => {
+      const item = data.results[index];
+      element.dataset.id = item.id;
+      element.querySelector(
+        '.film-img',
+      ).src = `https://image.tmdb.org/t/p/w400/${item.backdrop_path}`;
+      element.querySelector('.film-name').textContent = `${
+        item.title
+      }  (${item.release_date.slice(0, 4)})`;
     });
-    const obj = { popularFilm: correctData };
-    render(obj);
   });
 }
 
-export { fetchParams };
+export { renderFilmPerPages };

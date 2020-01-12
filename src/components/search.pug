@@ -1,3 +1,7 @@
-.search-form-wrapper
-      form.search-form
-        textarea.search-form__inner(placeholder='Write movie name and click Enter')
+section.search
+    .search__wrp
+        i.fas.fa-search.search__icon
+        input(type="search" placeholder="Write movie name and click Enter").search__input
+    .search__results.results(hidden)
+        p.results__title.title
+        ul.results__list

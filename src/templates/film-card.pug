@@ -3,5 +3,6 @@ each item in popularFilm
     a.film-link(href='#')
       img.film-img(src=`https://image.tmdb.org/t/p/w400/${item.backdrop_path}`, alt='')
       span.film-name=item.title+item.release_date
+      p.film-vote=item.vote_average
 
 

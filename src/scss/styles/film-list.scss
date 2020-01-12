@@ -37,6 +37,18 @@
   font-size: 1rem;
 }
 
+.film-vote {
+  border-radius: 6px;
+  background-color: $white;
+  width: 30px;
+  height: 16px;
+  z-index: 2;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+
+
 .film-img {
   border-radius: 5px;
 

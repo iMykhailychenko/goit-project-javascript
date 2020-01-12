@@ -14,6 +14,7 @@ fetch.getFilmsList(way).then(data => {
       backdrop_path: item.backdrop_path,
       title: item.title,
       release_date: ` (${item.release_date.slice(0, 4)})`,
+      vote_average: item.vote_average,
     };
   });
   const obj = { popularFilm: correctData };

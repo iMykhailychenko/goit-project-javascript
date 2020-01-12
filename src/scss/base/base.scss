@@ -47,4 +47,15 @@ main {
   flex-grow: 2;
 }
 
-.container {}
+.container-main {
+  width: 300px;
+  margin: 0 auto;
+
+  @media (min-width: 760px) {
+    width: 718px;
+  }
+
+  @media (min-width: 1020px) {
+    width: 964px;
+  }
+}

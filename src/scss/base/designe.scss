@@ -4,5 +4,9 @@ $white: #fff;
 $gray-search: #f3f6f6;
 $text-black: #372c48;
 $text-inactive: #506d77;
-$gray-pagination: #f8f8f8;
+$gray-pagination: linear-gradient(
+    180deg,
+    rgb(240, 240, 240) 0%,
+    rgba(240, 240, 240, 0) 100%
+  );
 $text-pagination: #556270;

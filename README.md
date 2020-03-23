@@ -1,5 +1,5 @@
 # goit-project-javascript
-#### Веб-страница по этой [ссылке](https://mykh-kino.netlify.com/)
+# Веб-страница по этой [ссылке](https://mykh-kino.netlify.com/)
 
 
 ## Как создать свою ветку, в которой вы будете работать?

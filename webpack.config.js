@@ -11,7 +11,7 @@ module.exports = env =>
       context: path.resolve(__dirname, 'src'),
       entry: './js/main.js',
       output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
         filename: 'main.js',
       },
       module: {

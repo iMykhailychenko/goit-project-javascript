@@ -1,6 +1,7 @@
-import mainPageLauncher from './getCorrectData';
-import filmPageLauncher from './renderFilmPage';
-import libraryLauncher from './renderLibrary';
+import MainLauncher from './main-launcher/mainLauncher';
+import FilmLauncher from './film-launcher/filmLauncher';
+import LibraryLauncher from './library-launcher/libraryLauncher';
+import SearchLauncher from './search-launcher/searchLauncher';
 
 class Routing {
   constructor(routes) {
@@ -14,11 +15,6 @@ class Routing {
     return this.routes.find(route => route.name === this.currentPageName);
   }
 
-  goToPage(name) {
-    const activeRoute = his.routes.find(route => route.name === name);
-    if (activeRoute) activeRoute.script();
-  }
-
   initActiveRoute() {
     this.getActiveRoute().script();
   }
@@ -27,15 +23,19 @@ class Routing {
 const routes = [
   {
     name: 'main-page',
-    script: mainPageLauncher,
+    script: MainLauncher,
   },
   {
-    name: 'inner-page',
-    script: filmPageLauncher,
+    name: 'film-page',
+    script: FilmLauncher,
   },
   {
     name: 'library',
-    script: libraryLauncher,
+    script: LibraryLauncher,
+  },
+  {
+    name: 'search',
+    script: SearchLauncher,
   },
 ];
 

@@ -1,93 +1,79 @@
 .header {
-  height: 66px;
   background: $green;
-}
 
-.header-nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
-  padding-top: 24px;
-}
-
-.site-nav {
-  list-style: none;
-  text-decoration: none;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0;
-  width: 244px;
-  margin: 0;
-}
-
-.site-nav__item {
-  font-family: 'Roboto Medium', sans-serif;
-  font-size: 1rem;
-  position: relative;
-  width: 122px;
-  text-align: center;
-
-  &:hover.site-nav__item::after {
-    opacity: 1;
-  }
-
-  &:hover .site-nav__link {
-    color: $text-black;
-  }
-}
-
-.site-nav__item::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background-color: $text-black;
-  top: 32px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  display: block;
-  opacity: 0;
-}
-
-.site-nav__link {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: $text-inactive;
-}
-
-.site-logo {
-  width: 20px;
-  margin: 0 0 8px 26px;
-  text-decoration: none;
-  display: flex;
-  align-items: baseline;
-
-  @media (min-width: 760px) {
-    width: 130px;
+  &__inner {
     display: flex;
     justify-content: space-between;
-    margin: 0 0 8px 4px;
+    align-items: center;
+    height: 66px;
   }
-}
 
-.site-logo__img {
-  width: 20px;
-  height: 18px;
-}
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #506d77;
 
-.site-logo__text {
-  display: none;
-  font-family: 'Roboto Medium', sans-serif;
-  font-size: 1.4286rem;
-  color: $text-black;
+    &__img {
+      width: 20px;
+    }
 
-  @media (min-width: 760px) {
-    display: block;
+    &__text {
+      display: none;
+      margin-left: 8px;
+
+      @media (min-width: 760px) {
+        display: block;
+      }
+    }
+  }
+
+  .nav {
+    width: 60%;
+
+    @media (min-width: 760px) {
+      width: 240px;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      list-style: none;
+    }
+
+    &__link {
+      padding: 8px 20px;
+    }
+
+    &__item {
+      @media (min-width: 760px) {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 2px;
+          width: 0;
+          opacity: 0;
+          background: #506d77;
+          transition: 0.3s;
+        }
+
+        &:hover::before {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #506d77;
+    }
   }
 }

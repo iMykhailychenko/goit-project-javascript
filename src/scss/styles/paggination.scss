@@ -1,0 +1,27 @@
+.paggination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 70px;
+
+  &__btn {
+    padding: 16px 24px;
+    background: linear-gradient(180deg, #f0f0f0, hsla(0, 0%, 94.1%, 0));
+    box-shadow: inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.004);
+    border: 1px solid #ddd;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #556270;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  &__number {
+    margin: 0 10px;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

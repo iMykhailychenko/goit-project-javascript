@@ -1,14 +1,7 @@
 .footer {
-  height: 87px;
-  padding: 34px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
   background: $green;
-}
-
-.footer-text {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.1429rem;
-  color: $black;
-  line-height: 1;
-  text-align: center;
-  margin: 0;
 }

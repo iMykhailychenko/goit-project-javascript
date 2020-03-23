@@ -1,17 +1,29 @@
 doctype html
 head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  meta(http-equiv='X-UA-Compatible' content='ie=edge')
-  link(rel='icon' href="./img/favicon.png" type='image/png')
-  title Filmoteka
+
+	meta(charset='UTF-8')
+	meta(name='viewport' content='width=device-width, initial-scale=1.0')
+	meta(http-equiv='X-UA-Compatible' content='ie=edge')
+	link(rel='icon' href="./img/favicon.png" type='image/png')
+	title Filmoteka
 
 body
-  include components/header.pug
-  include components/search.pug
-  main
-    include components/film-list.pug
-    include components/film-page.pug
-    include components/buttons.pug
-    include components/scroll-up.pug
-  include components/footer.pug
+
+	include pug/header.pug
+
+	main
+
+		.launcher.launcher__main
+			include pug/search.pug
+			include pug/film-list.pug
+			include pug/paggination.pug
+
+		.launcher.launcher__film.hidden
+			include pug/film-page.pug
+
+		.launcher.launcher__library.hidden
+			include pug/nav.pug
+			include pug/film-list.pug
+
+	include pug/scroll-up.pug
+	include pug/footer.pug

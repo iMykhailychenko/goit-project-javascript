@@ -1,8 +1,14 @@
 each item in popularFilm
-  if item.backdrop_path
-    li.film-list__item
-      a.film-link(href=`?id=${item.id}#inner-page`)
-        img.film-img(src=`https://image.tmdb.org/t/p/w400/${item.backdrop_path}`, alt='')
-        span.film-name=item.title+item.release_date
 
+	li.film__item
+
+		a.film__link(href=`/?id=${item.id}#film-page`)
+
+			img.film__img(src=`${item.backdropPath ? item.backdropPath : item.defaultImg}`, alt='')
+
+			span.film__name=item.title+item.releaseDate
+
+			if (item.voteAverage)
+
+				span.film__vote=item.voteAverage
 

@@ -28,6 +28,10 @@ input[type='radio'].visually-hidden {
   overflow: hidden;
 }
 
+ul {
+  list-style: none;
+}
+
 img {
   display: block;
   width: 100%;
@@ -47,7 +51,7 @@ main {
   flex-grow: 2;
 }
 
-.container-main {
+.container {
   width: 300px;
   margin: 0 auto;
 
@@ -60,17 +64,9 @@ main {
   }
 }
 
-.container-film {
-  width: 274px;
-  margin: 0 auto;
-
-  @media (min-width: 768px) {
-    width: 716px;
-  }
-
-  @media (min-width: 1024px) {
-    width: 900px;
-  }
+.hidden {
+  display: none;
+  visibility: hidden;
 }
 
 .btn {
